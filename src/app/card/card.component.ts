@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-card',
@@ -7,15 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  image = 'http://math.sci.ubu.ac.th/assets/staffimages/warawoot.jpg';
-  name = 'John Doe';
-  position = 'Programmer';
+  friends: any;
+  users: any;
 
-  constructor() {
-    this.image = 'https://wichit2s.gitlab.io/assets/images/paul_logo_96x96.png';
+  constructor(private userService: UserService) {
   }
 
   ngOnInit() {
+    this.friends = this.userService.getFriends();
+    this.userService._getUsers().subscribe(
+      (data: any) => {
+        this.users = data.result.hits;
+        console.log(this.users);
+        for (const u of this.users) {
+          // console.log(u['source'])
+          // console.log(u._source)
+          console.log(u._source.user);
+        }
+      },
+      error => {
+
+      }
+    );
   }
 
 }

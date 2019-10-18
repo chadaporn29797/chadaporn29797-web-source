@@ -1,7 +1,29 @@
- <div class="card">
-  <img src="{{image}}" alt="Avatar" style="width:100%">
-  <div class="container">
-    <h4><b>{{name}}</b></h4>
-    <p>{{position}}</p>
+
+  <!--
+  <div class="card" *ngIf="users">มีข้อมูลแล้ว</div>
+  <div class="card"> {{ users | json }} </div>
+  -->
+
+  <!--
+  <div><h1> รายการ user </h1></div>
+  <div class="card" *ngFor="let u of users">
+    <div class="container">
+      <h4><b>{{u._source.user}}</b></h4>
+      <p>{{u.password}}</p>
+    </div>
+  </div>
+-->
+<p>
+<p>
+
+<div class="gallery" *ngFor="let friend of friends">
+  <a target="_blank" href="img_5terre.jpg">
+    <img src="{{'assets/images/'+friend.pic}}" alt="Avatar">
+  </a>
+  <div class="desc"><br/><h4>{{friend.name}}</h4>
+  <p>{{friend.position}}
   </div>
 </div>
+
+
+
