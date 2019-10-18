@@ -33,8 +33,11 @@ export class LoginComponent implements OnInit {
         console.log("ผ่านuser")
         if(password==u.value.password){
           this.rooter.navigate(['/card'])
-          console.log("ผ่านpassword")
+          // console.log("ผ่านpassword");
+          alert("login เสร็จสิ้น");
         }
+      }else{
+        alert("กรอก urername หรือ password ผิด")
       }
     }
   }
