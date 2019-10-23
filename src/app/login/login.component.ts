@@ -35,9 +35,9 @@ export class LoginComponent implements OnInit {
           this.rooter.navigate(['/card'])
           // console.log("ผ่านpassword");
           alert("login เสร็จสิ้น");
+        }else{
+          alert("กรอก urername หรือ password ผิด")
         }
-      }else{
-        alert("กรอก urername หรือ password ผิด")
       }
     }
   }

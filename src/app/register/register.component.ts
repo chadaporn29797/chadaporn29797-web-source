@@ -23,18 +23,7 @@ export class RegisterComponent implements OnInit {
   }
 
   signup(data: NgForm) {
-
     this.db.list('/60114440042/user').push(data.value);
     alert("บันทึกเสร็จสิ้น")
-    // console.log(`เรียกฟังก์ชัน signup(user=${user}, password=${password})`);
-    // this.user = user;
-    // this.password = password;
-    // this.userservice._saveUser(user, password).subscribe(
-    //   () => {
-    //     this.router.navigate([ '/login' ]);
-    //   },
-    //   error => {
-    //     console.error( error );
-    //   });
   }
 }
